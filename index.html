@@ -1,0 +1,1051 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>
+      Gemilang Katun Outbound - Event Organizer Outbound Malang Batu
+    </title>
+    <meta
+      name="description"
+      content="Gemilang Katun Outbound - EO Outbound, Paintball, Team Building, Gathering & Wisata Edukasi di Malang Batu. Hubungi 0822-1122-1909."
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#0d6e3f",
+              "primary-dark": "#0a5832",
+              accent: "#f59e0b",
+              "bg-light": "#f0fdf4",
+              "bg-dark": "#0c1a12",
+            },
+            fontFamily: { display: ["Inter", "sans-serif"] },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-fade-in-up {
+        animation: fadeInUp 0.7s ease-out forwards;
+      }
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+      .animate-float {
+        animation: float 3s ease-in-out infinite;
+      }
+      .hero-gradient {
+        background: linear-gradient(
+          135deg,
+          #0d6e3f 0%,
+          #065f46 50%,
+          #064e3b 100%
+        );
+      }
+      .card-hover {
+        transition: all 0.3s ease;
+      }
+      .card-hover:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 40px rgba(13, 110, 63, 0.15);
+      }
+      .wa-float {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        z-index: 999;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: #25d366;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+        transition: transform 0.3s;
+      }
+      .wa-float:hover {
+        transform: scale(1.1);
+      }
+      .nav-link {
+        position: relative;
+      }
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: #0d6e3f;
+        transition: width 0.3s;
+      }
+      .nav-link:hover::after {
+        width: 100%;
+      }
+      #mobile-menu {
+        transition:
+          max-height 0.3s ease,
+          opacity 0.3s ease;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+      }
+      #mobile-menu.open {
+        max-height: 400px;
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body class="bg-bg-light text-slate-800 antialiased">
+    <!-- Floating WhatsApp -->
+    <a
+      href="https://wa.me/6282211221909?text=Halo%20Gemilang%20Katun%20Outbound%2C%20saya%20ingin%20konsultasi%20tentang%20paket%20outbound."
+      class="wa-float"
+      aria-label="WhatsApp"
+      target="_blank"
+    >
+      <svg class="w-8 h-8 fill-white" viewBox="0 0 24 24">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+        />
+      </svg>
+    </a>
+
+    <!-- Navigation -->
+    <nav
+      class="sticky top-0 z-50 w-full border-b border-green-100 bg-white/90 backdrop-blur-md"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <a href="index.html" class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-3xl"
+              >forest</span
+            >
+            <span class="text-xl font-black tracking-tight text-slate-900"
+              >Gemilang<span class="text-primary">Outbound</span></span
+            >
+          </a>
+          <div class="hidden md:flex items-center gap-8">
+            <a
+              class="nav-link text-sm font-semibold text-primary"
+              href="index.html"
+              >Home</a
+            >
+            <a
+              class="nav-link text-sm font-medium text-slate-600 hover:text-primary transition-colors"
+              href="blog.html"
+              >Blog</a
+            >
+            <a
+              class="nav-link text-sm font-medium text-slate-600 hover:text-primary transition-colors"
+              href="#layanan"
+              >Layanan</a
+            >
+            <a
+              class="nav-link text-sm font-medium text-slate-600 hover:text-primary transition-colors"
+              href="#tentang"
+              >Tentang</a
+            >
+            <a
+              class="nav-link text-sm font-medium text-slate-600 hover:text-primary transition-colors"
+              href="#kontak"
+              >Kontak</a
+            >
+            <a
+              href="https://wa.me/6282211221909?text=Halo%20Gemilang%20Katun%20Outbound%2C%20saya%20tertarik%20dengan%20paket%20outbound."
+              target="_blank"
+              class="bg-primary text-white px-5 py-2.5 rounded-lg text-sm font-bold hover:bg-primary-dark transition-all shadow-sm flex items-center gap-2"
+            >
+              <svg class="w-4 h-4 fill-white" viewBox="0 0 24 24">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                />
+              </svg>
+              Hubungi Kami
+            </a>
+          </div>
+          <button id="menu-toggle" class="md:hidden">
+            <span class="material-symbols-outlined text-slate-700 text-3xl"
+              >menu</span
+            >
+          </button>
+        </div>
+        <div id="mobile-menu" class="md:hidden pb-4">
+          <a
+            class="block py-2.5 text-sm font-semibold text-primary"
+            href="index.html"
+            >Home</a
+          >
+          <a
+            class="block py-2.5 text-sm font-medium text-slate-600"
+            href="blog.html"
+            >Blog</a
+          >
+          <a
+            class="block py-2.5 text-sm font-medium text-slate-600"
+            href="#layanan"
+            >Layanan</a
+          >
+          <a
+            class="block py-2.5 text-sm font-medium text-slate-600"
+            href="#tentang"
+            >Tentang</a
+          >
+          <a
+            class="block py-2.5 text-sm font-medium text-slate-600"
+            href="#kontak"
+            >Kontak</a
+          >
+          <a
+            href="https://wa.me/6282211221909?text=Halo%20Gemilang%20Katun%20Outbound"
+            target="_blank"
+            class="mt-2 block text-center bg-primary text-white px-5 py-2.5 rounded-lg text-sm font-bold"
+            >Hubungi via WhatsApp</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header
+      class="hero-gradient relative overflow-hidden pt-16 pb-20 lg:pt-24 lg:pb-32"
+    >
+      <div class="absolute inset-0 opacity-10">
+        <svg width="100%" height="100%">
+          <defs>
+            <pattern
+              id="p"
+              width="40"
+              height="40"
+              patternUnits="userSpaceOnUse"
+            >
+              <circle cx="20" cy="20" r="1.5" fill="white" />
+            </pattern>
+          </defs>
+          <rect fill="url(#p)" width="100%" height="100%" />
+        </svg>
+      </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="lg:grid lg:grid-cols-12 lg:gap-12 items-center">
+          <div class="lg:col-span-6 text-left animate-fade-in-up">
+            <span
+              class="inline-block bg-white/20 text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6"
+              >🏔️ Event Organizer Outbound #1 Malang Batu</span
+            >
+            <h1
+              class="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight tracking-tight text-white mb-6"
+            >
+              Ciptakan Momen <br /><span class="text-accent">Luar Biasa</span>
+              Bersama Tim Anda
+            </h1>
+            <p class="text-lg text-green-100 mb-10 max-w-xl leading-relaxed">
+              Paket Outbound, Paintball, Team Building, Gathering & Wisata
+              Edukasi di kawasan Malang Raya & Batu. Profesional, aman, dan
+              berkesan!
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a
+                href="https://wa.me/6282211221909?text=Halo%20Gemilang%20Katun%20Outbound%2C%20saya%20ingin%20konsultasi%20paket%20outbound%20untuk%20perusahaan%20kami."
+                target="_blank"
+                class="bg-accent text-slate-900 px-8 py-4 rounded-xl text-base font-extrabold hover:bg-yellow-400 transition-all shadow-lg shadow-accent/30 text-center flex items-center justify-center gap-2"
+              >
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                  />
+                </svg>
+                Konsultasi Gratis
+              </a>
+              <a
+                href="blog.html"
+                class="bg-white/10 backdrop-blur border border-white/30 text-white px-8 py-4 rounded-xl text-base font-bold hover:bg-white/20 transition-all text-center"
+              >
+                Lihat Paket Kami
+              </a>
+            </div>
+            <div class="flex items-center gap-6 mt-10 text-green-100 text-sm">
+              <span class="flex items-center gap-1.5"
+                ><span class="material-symbols-outlined text-accent text-lg"
+                  >verified</span
+                >
+                Berpengalaman 10+ Tahun</span
+              >
+              <span class="flex items-center gap-1.5"
+                ><span class="material-symbols-outlined text-accent text-lg"
+                  >groups</span
+                >
+                500+ Klien Puas</span
+              >
+            </div>
+          </div>
+          <div
+            class="mt-12 lg:mt-0 lg:col-span-6 relative animate-fade-in-up"
+            style="animation-delay: 0.3s"
+          >
+            <div
+              class="rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20"
+            >
+              <img
+                class="w-full h-full object-cover aspect-video lg:aspect-square"
+                src="images/hero_outbound.png"
+                alt="Tim outbound Gemilang Katun sedang beraksi di hutan pinus"
+              />
+            </div>
+            <div
+              class="absolute -bottom-4 -left-4 bg-white rounded-xl shadow-xl p-4 animate-float hidden lg:flex items-center gap-3"
+            >
+              <div
+                class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center"
+              >
+                <span class="material-symbols-outlined text-primary"
+                  >emoji_events</span
+                >
+              </div>
+              <div>
+                <p class="text-xs text-slate-500">Rating Klien</p>
+                <p class="font-extrabold text-slate-900">⭐ 4.9/5.0</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Layanan Section -->
+    <section id="layanan" class="py-20 bg-white border-y border-green-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <span
+            class="inline-block bg-green-100 text-primary text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4"
+            >Layanan Kami</span
+          >
+          <h2 class="text-3xl lg:text-4xl font-black text-slate-900 mb-4">
+            Solusi Outbound Terlengkap
+          </h2>
+          <p class="text-slate-500 max-w-2xl mx-auto">
+            Kami menyediakan berbagai paket kegiatan luar ruang yang dirancang
+            khusus untuk membangun tim yang solid dan menciptakan pengalaman tak
+            terlupakan.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <a
+            href="https://wa.me/6282211221909?text=Halo%2C%20saya%20tertarik%20dengan%20paket%20Paintball%20Simulasi%20Tempur."
+            target="_blank"
+            class="card-hover p-7 rounded-2xl bg-bg-light border border-green-100 hover:border-primary/30 group block"
+          >
+            <div
+              class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary transition-colors"
+            >
+              <span
+                class="material-symbols-outlined text-primary group-hover:text-white text-2xl transition-colors"
+                >sports_esports</span
+              >
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">
+              Paintball Simulasi Tempur
+            </h3>
+            <p class="text-slate-500 text-sm leading-relaxed">
+              Simulasi pertempuran seru di hutan pinus dengan skenario taktis
+              profesional.
+            </p>
+          </a>
+          <a
+            href="https://wa.me/6282211221909?text=Halo%2C%20saya%20tertarik%20dengan%20paket%20Gathering%20%26%20Outing."
+            target="_blank"
+            class="card-hover p-7 rounded-2xl bg-bg-light border border-green-100 hover:border-primary/30 group block"
+          >
+            <div
+              class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary transition-colors"
+            >
+              <span
+                class="material-symbols-outlined text-primary group-hover:text-white text-2xl transition-colors"
+                >celebration</span
+              >
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">
+              Gathering & Outing
+            </h3>
+            <p class="text-slate-500 text-sm leading-relaxed">
+              EO gathering perusahaan di destinasi terbaik seperti Jatim Park &
+              Songgoriti.
+            </p>
+          </a>
+          <a
+            href="https://wa.me/6282211221909?text=Halo%2C%20saya%20tertarik%20dengan%20paket%20Team%20Bonding."
+            target="_blank"
+            class="card-hover p-7 rounded-2xl bg-bg-light border border-green-100 hover:border-primary/30 group block"
+          >
+            <div
+              class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary transition-colors"
+            >
+              <span
+                class="material-symbols-outlined text-primary group-hover:text-white text-2xl transition-colors"
+                >handshake</span
+              >
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">Team Bonding</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">
+              Program koneksi emosional & experiential learning di alam terbuka
+              Malang.
+            </p>
+          </a>
+          <a
+            href="https://wa.me/6282211221909?text=Halo%2C%20saya%20tertarik%20dengan%20paket%20Wisata%20Edukasi."
+            target="_blank"
+            class="card-hover p-7 rounded-2xl bg-bg-light border border-green-100 hover:border-primary/30 group block"
+          >
+            <div
+              class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary transition-colors"
+            >
+              <span
+                class="material-symbols-outlined text-primary group-hover:text-white text-2xl transition-colors"
+                >school</span
+              >
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">
+              Wisata Edukasi
+            </h3>
+            <p class="text-slate-500 text-sm leading-relaxed">
+              Field trip sekolah ke perkebunan apel, peternakan sapi & alam
+              Malang Raya.
+            </p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <span
+            class="inline-block bg-green-100 text-primary text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4"
+            >Galeri Kegiatan</span
+          >
+          <h2 class="text-3xl lg:text-4xl font-black text-slate-900 mb-4">
+            Momen Seru Bersama Kami
+          </h2>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div
+            class="rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow"
+          >
+            <img
+              src="images/paintball_tempur.png"
+              alt="Paintball Simulasi Tempur"
+              class="w-full h-48 md:h-56 object-cover hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+          <div
+            class="rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow"
+          >
+            <img
+              src="images/gathering_jatimpark.png"
+              alt="Gathering Jatim Park"
+              class="w-full h-48 md:h-56 object-cover hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+          <div
+            class="rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow"
+          >
+            <img
+              src="images/team_bonding.png"
+              alt="Team Bonding"
+              class="w-full h-48 md:h-56 object-cover hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+          <div
+            class="rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow"
+          >
+            <img
+              src="images/campfire_night.png"
+              alt="Malam Keakraban"
+              class="w-full h-48 md:h-56 object-cover hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+          <div
+            class="rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow"
+          >
+            <img
+              src="images/wisata_edukasi.png"
+              alt="Wisata Edukasi"
+              class="w-full h-48 md:h-56 object-cover hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+          <div
+            class="rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow"
+          >
+            <img
+              src="images/rafting_adventure.png"
+              alt="Rafting Adventure"
+              class="w-full h-48 md:h-56 object-cover hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tentang Section -->
+    <section id="tentang" class="py-20 bg-white border-y border-green-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+          <div class="rounded-2xl overflow-hidden shadow-xl mb-10 lg:mb-0">
+            <img
+              src="images/about_team.png"
+              alt="Tim Gemilang Katun Outbound"
+              class="w-full h-full object-cover aspect-video"
+            />
+          </div>
+          <div>
+            <span
+              class="inline-block bg-green-100 text-primary text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4"
+              >Tentang Kami</span
+            >
+            <h2 class="text-3xl lg:text-4xl font-black text-slate-900 mb-6">
+              Kenapa Memilih<br /><span class="text-primary"
+                >Gemilang Katun Outbound?</span
+              >
+            </h2>
+            <p class="text-slate-600 mb-8 leading-relaxed">
+              Kami adalah event organizer outbound profesional yang telah
+              berpengalaman lebih dari 10 tahun melayani ratusan perusahaan,
+              instansi pemerintah, dan sekolah di seluruh Indonesia. Berbasis di
+              Kota Batu, Malang, kami memahami setiap detail medan dan lokasi
+              terbaik untuk kegiatan outdoor.
+            </p>
+            <div class="grid grid-cols-2 gap-4 mb-8">
+              <div class="bg-bg-light rounded-xl p-4">
+                <p class="text-2xl font-black text-primary">500+</p>
+                <p class="text-xs text-slate-500 font-medium">
+                  Klien Terlayani
+                </p>
+              </div>
+              <div class="bg-bg-light rounded-xl p-4">
+                <p class="text-2xl font-black text-primary">10+</p>
+                <p class="text-xs text-slate-500 font-medium">
+                  Tahun Pengalaman
+                </p>
+              </div>
+              <div class="bg-bg-light rounded-xl p-4">
+                <p class="text-2xl font-black text-primary">50+</p>
+                <p class="text-xs text-slate-500 font-medium">
+                  Fasilitator Terlatih
+                </p>
+              </div>
+              <div class="bg-bg-light rounded-xl p-4">
+                <p class="text-2xl font-black text-primary">100%</p>
+                <p class="text-xs text-slate-500 font-medium">Standar K3</p>
+              </div>
+            </div>
+            <a
+              href="https://wa.me/6282211221909?text=Halo%2C%20saya%20ingin%20tahu%20lebih%20lanjut%20tentang%20Gemilang%20Katun%20Outbound."
+              target="_blank"
+              class="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-xl font-bold hover:bg-primary-dark transition-all shadow-md"
+            >
+              <span class="material-symbols-outlined text-lg">chat</span>
+              Hubungi Kami Sekarang
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Preview -->
+    <section class="py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-end mb-12">
+          <div>
+            <span
+              class="inline-block bg-green-100 text-primary text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4"
+              >Blog & Artikel</span
+            >
+            <h2 class="text-3xl font-black text-slate-900">Artikel Terbaru</h2>
+            <p class="text-slate-500 mt-2">
+              Informasi lengkap seputar outbound & wisata Malang Batu.
+            </p>
+          </div>
+          <a
+            class="hidden sm:flex items-center text-primary font-bold hover:gap-2 transition-all"
+            href="blog.html"
+            >Lihat Semua
+            <span class="material-symbols-outlined ml-1">arrow_forward</span></a
+          >
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <a
+            href="artikel-1.html"
+            class="card-hover flex flex-col bg-white rounded-2xl overflow-hidden shadow-sm border border-green-50"
+          >
+            <div class="aspect-video w-full relative">
+              <img
+                class="w-full h-full object-cover"
+                src="images/paintball_tempur.png"
+                alt="Paintball Simulasi Tempur Batu"
+              /><span
+                class="absolute top-4 left-4 bg-primary text-white text-[10px] uppercase tracking-widest font-bold px-2.5 py-1 rounded-full"
+                >Paintball</span
+              >
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <div class="flex items-center text-xs text-slate-400 mb-3 gap-4">
+                <span class="flex items-center gap-1"
+                  ><span class="material-symbols-outlined text-sm"
+                    >calendar_today</span
+                  >
+                  20 Feb 2026</span
+                ><span class="flex items-center gap-1"
+                  ><span class="material-symbols-outlined text-sm"
+                    >schedule</span
+                  >
+                  8 min</span
+                >
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 mb-2 leading-tight">
+                Paket Paintball Simulasi Tempur Batu
+              </h3>
+              <p class="text-sm text-slate-500 mb-4 line-clamp-3">
+                Uji ketangkasan dan adrenalin lewat paket paintball simulasi
+                tempur di hutan pinus Batu...
+              </p>
+              <span
+                class="mt-auto text-primary text-sm font-bold flex items-center"
+                >Baca Selengkapnya
+                <span class="material-symbols-outlined text-sm ml-1"
+                  >chevron_right</span
+                ></span
+              >
+            </div>
+          </a>
+          <a
+            href="artikel-2.html"
+            class="card-hover flex flex-col bg-white rounded-2xl overflow-hidden shadow-sm border border-green-50"
+          >
+            <div class="aspect-video w-full relative">
+              <img
+                class="w-full h-full object-cover"
+                src="images/gathering_jatimpark.png"
+                alt="Gathering Jatim Park"
+              /><span
+                class="absolute top-4 left-4 bg-primary text-white text-[10px] uppercase tracking-widest font-bold px-2.5 py-1 rounded-full"
+                >Gathering</span
+              >
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <div class="flex items-center text-xs text-slate-400 mb-3 gap-4">
+                <span class="flex items-center gap-1"
+                  ><span class="material-symbols-outlined text-sm"
+                    >calendar_today</span
+                  >
+                  18 Feb 2026</span
+                ><span class="flex items-center gap-1"
+                  ><span class="material-symbols-outlined text-sm"
+                    >schedule</span
+                  >
+                  7 min</span
+                >
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 mb-2 leading-tight">
+                EO Outbound Gathering Jatim Park
+              </h3>
+              <p class="text-sm text-slate-500 mb-4 line-clamp-3">
+                Membawa ratusan karyawan beserta keluarga berekreasi di Jatim
+                Park dengan program terstruktur...
+              </p>
+              <span
+                class="mt-auto text-primary text-sm font-bold flex items-center"
+                >Baca Selengkapnya
+                <span class="material-symbols-outlined text-sm ml-1"
+                  >chevron_right</span
+                ></span
+              >
+            </div>
+          </a>
+          <a
+            href="artikel-3.html"
+            class="card-hover flex flex-col bg-white rounded-2xl overflow-hidden shadow-sm border border-green-50"
+          >
+            <div class="aspect-video w-full relative">
+              <img
+                class="w-full h-full object-cover"
+                src="images/team_bonding.png"
+                alt="Team Bonding Malang"
+              /><span
+                class="absolute top-4 left-4 bg-primary text-white text-[10px] uppercase tracking-widest font-bold px-2.5 py-1 rounded-full"
+                >Team Bonding</span
+              >
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <div class="flex items-center text-xs text-slate-400 mb-3 gap-4">
+                <span class="flex items-center gap-1"
+                  ><span class="material-symbols-outlined text-sm"
+                    >calendar_today</span
+                  >
+                  15 Feb 2026</span
+                ><span class="flex items-center gap-1"
+                  ><span class="material-symbols-outlined text-sm"
+                    >schedule</span
+                  >
+                  7 min</span
+                >
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 mb-2 leading-tight">
+                Outbound Team Bonding Perusahaan Malang
+              </h3>
+              <p class="text-sm text-slate-500 mb-4 line-clamp-3">
+                Program koneksi emosional dan experiential learning untuk
+                karyawan di alam terbuka Malang...
+              </p>
+              <span
+                class="mt-auto text-primary text-sm font-bold flex items-center"
+                >Baca Selengkapnya
+                <span class="material-symbols-outlined text-sm ml-1"
+                  >chevron_right</span
+                ></span
+              >
+            </div>
+          </a>
+        </div>
+        <div class="mt-8 sm:hidden text-center">
+          <a
+            class="text-primary font-bold flex items-center justify-center"
+            href="blog.html"
+            >Lihat Semua Artikel
+            <span class="material-symbols-outlined ml-1">arrow_forward</span></a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 hero-gradient relative overflow-hidden">
+      <div class="absolute inset-0 opacity-10">
+        <svg width="100%" height="100%">
+          <defs>
+            <pattern
+              id="p2"
+              width="40"
+              height="40"
+              patternUnits="userSpaceOnUse"
+            >
+              <circle cx="20" cy="20" r="1.5" fill="white" />
+            </pattern>
+          </defs>
+          <rect fill="url(#p2)" width="100%" height="100%" />
+        </svg>
+      </div>
+      <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+        <h2 class="text-3xl lg:text-4xl font-black text-white mb-6">
+          Siap Merencanakan Kegiatan Outbound Anda?
+        </h2>
+        <p class="text-green-100 text-lg mb-10 max-w-2xl mx-auto">
+          Konsultasikan kebutuhan tim Anda secara GRATIS. Kami siap merancang
+          program outbound yang tepat sasaran untuk perusahaan Anda.
+        </p>
+        <a
+          href="https://wa.me/6282211221909?text=Halo%20Gemilang%20Katun%20Outbound%2C%20saya%20ingin%20konsultasi%20paket%20outbound.%20Berikut%20detail%20kami%3A%0ANama%3A%20%0APerusahaan%3A%20%0AJumlah%20Peserta%3A%20%0ATanggal%20Rencana%3A%20"
+          target="_blank"
+          class="inline-flex items-center gap-3 bg-accent text-slate-900 px-10 py-5 rounded-xl text-lg font-extrabold hover:bg-yellow-400 transition-all shadow-xl shadow-accent/30"
+        >
+          <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+            />
+          </svg>
+          Hubungi via WhatsApp: 0822-1122-1909
+        </a>
+      </div>
+    </section>
+
+    <!-- Kontak Section -->
+    <section id="kontak" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <span
+            class="inline-block bg-green-100 text-primary text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4"
+            >Kontak</span
+          >
+          <h2 class="text-3xl font-black text-slate-900 mb-4">Hubungi Kami</h2>
+          <p class="text-slate-500">
+            Isi form di bawah ini dan kami akan menghubungi Anda melalui
+            WhatsApp.
+          </p>
+        </div>
+        <div
+          class="max-w-2xl mx-auto bg-bg-light rounded-2xl p-8 border border-green-100"
+        >
+          <form id="contact-form" class="space-y-5">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <label class="block text-sm font-semibold text-slate-700 mb-1.5"
+                  >Nama Lengkap</label
+                ><input
+                  id="cf-name"
+                  type="text"
+                  required
+                  class="w-full bg-white border border-green-200 rounded-lg px-4 py-3 text-sm focus:ring-primary focus:border-primary"
+                  placeholder="Masukkan nama Anda"
+                />
+              </div>
+              <div>
+                <label class="block text-sm font-semibold text-slate-700 mb-1.5"
+                  >Perusahaan / Instansi</label
+                ><input
+                  id="cf-company"
+                  type="text"
+                  class="w-full bg-white border border-green-200 rounded-lg px-4 py-3 text-sm focus:ring-primary focus:border-primary"
+                  placeholder="Nama perusahaan"
+                />
+              </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <label class="block text-sm font-semibold text-slate-700 mb-1.5"
+                  >Jumlah Peserta</label
+                ><input
+                  id="cf-pax"
+                  type="number"
+                  class="w-full bg-white border border-green-200 rounded-lg px-4 py-3 text-sm focus:ring-primary focus:border-primary"
+                  placeholder="Jumlah orang"
+                />
+              </div>
+              <div>
+                <label class="block text-sm font-semibold text-slate-700 mb-1.5"
+                  >Tanggal Rencana</label
+                ><input
+                  id="cf-date"
+                  type="date"
+                  class="w-full bg-white border border-green-200 rounded-lg px-4 py-3 text-sm focus:ring-primary focus:border-primary"
+                />
+              </div>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-slate-700 mb-1.5"
+                >Paket yang Diminati</label
+              >
+              <select
+                id="cf-paket"
+                class="w-full bg-white border border-green-200 rounded-lg px-4 py-3 text-sm focus:ring-primary focus:border-primary"
+              >
+                <option value="Paintball Simulasi Tempur">
+                  Paintball Simulasi Tempur
+                </option>
+                <option value="Gathering & Outing">Gathering & Outing</option>
+                <option value="Team Bonding">Team Bonding</option>
+                <option value="Wisata Edukasi">Wisata Edukasi</option>
+                <option value="Paket Outbound Songgoriti">
+                  Paket Outbound Songgoriti
+                </option>
+                <option value="Lainnya">Lainnya</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-slate-700 mb-1.5"
+                >Pesan Tambahan</label
+              ><textarea
+                id="cf-msg"
+                rows="3"
+                class="w-full bg-white border border-green-200 rounded-lg px-4 py-3 text-sm focus:ring-primary focus:border-primary"
+                placeholder="Tulis pesan Anda..."
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              class="w-full bg-primary text-white py-4 rounded-xl font-extrabold text-base hover:bg-primary-dark transition-all shadow-md flex items-center justify-center gap-2"
+            >
+              <svg class="w-5 h-5 fill-white" viewBox="0 0 24 24">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                />
+              </svg>
+              Kirim via WhatsApp
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 pt-16 pb-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+          <div class="md:col-span-2">
+            <div class="flex items-center gap-2 mb-4">
+              <span class="material-symbols-outlined text-primary text-3xl"
+                >forest</span
+              ><span class="text-xl font-black text-white"
+                >Gemilang<span class="text-primary">Outbound</span></span
+              >
+            </div>
+            <p class="text-slate-400 text-sm leading-relaxed max-w-sm mb-6">
+              Event Organizer Outbound profesional di Malang & Batu. Paintball,
+              Team Building, Gathering, Wisata Edukasi & lebih banyak lagi.
+            </p>
+            <div class="flex gap-3">
+              <a
+                href="https://wa.me/6282211221909"
+                target="_blank"
+                class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:text-green-400 hover:bg-slate-700 transition-all"
+                ><svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                  /></svg
+              ></a>
+            </div>
+          </div>
+          <div>
+            <h4
+              class="text-sm font-bold text-white uppercase tracking-wider mb-5"
+            >
+              Halaman
+            </h4>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  class="text-sm text-slate-400 hover:text-primary transition-colors"
+                  href="index.html"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  class="text-sm text-slate-400 hover:text-primary transition-colors"
+                  href="blog.html"
+                  >Blog</a
+                >
+              </li>
+              <li>
+                <a
+                  class="text-sm text-slate-400 hover:text-primary transition-colors"
+                  href="#layanan"
+                  >Layanan</a
+                >
+              </li>
+              <li>
+                <a
+                  class="text-sm text-slate-400 hover:text-primary transition-colors"
+                  href="#tentang"
+                  >Tentang Kami</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4
+              class="text-sm font-bold text-white uppercase tracking-wider mb-5"
+            >
+              Kontak
+            </h4>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  class="text-sm text-slate-400 hover:text-primary transition-colors flex items-center gap-2"
+                  href="https://wa.me/6282211221909"
+                  target="_blank"
+                  ><span class="material-symbols-outlined text-base">call</span>
+                  0822-1122-1909</a
+                >
+              </li>
+              <li>
+                <span class="text-sm text-slate-400 flex items-center gap-2"
+                  ><span class="material-symbols-outlined text-base"
+                    >location_on</span
+                  >
+                  Kota Batu, Malang, Jawa Timur</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="border-t border-slate-800 pt-6 flex flex-col md:flex-row justify-between items-center gap-4"
+        >
+          <p class="text-xs text-slate-500">
+            © 2026 Gemilang Katun Outbound. All rights reserved.
+          </p>
+          <a
+            href="#"
+            onclick="
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+              return false;
+            "
+            class="text-xs text-slate-500 flex items-center gap-1 hover:text-primary"
+            ><span class="material-symbols-outlined text-sm">arrow_upward</span>
+            Kembali ke atas</a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      document
+        .getElementById("menu-toggle")
+        .addEventListener("click", function () {
+          document.getElementById("mobile-menu").classList.toggle("open");
+        });
+      // Contact form -> WhatsApp
+      document
+        .getElementById("contact-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const name = document.getElementById("cf-name").value;
+          const company = document.getElementById("cf-company").value;
+          const pax = document.getElementById("cf-pax").value;
+          const date = document.getElementById("cf-date").value;
+          const paket = document.getElementById("cf-paket").value;
+          const msg = document.getElementById("cf-msg").value;
+          let text = `Halo Gemilang Katun Outbound!%0A%0A`;
+          text += `Nama: ${name}%0A`;
+          if (company) text += `Perusahaan: ${company}%0A`;
+          if (pax) text += `Jumlah Peserta: ${pax} orang%0A`;
+          if (date) text += `Tanggal Rencana: ${date}%0A`;
+          text += `Paket: ${paket}%0A`;
+          if (msg) text += `Pesan: ${msg}%0A`;
+          window.open(`https://wa.me/6282211221909?text=${text}`, "_blank");
+        });
+    </script>
+  </body>
+</html>
