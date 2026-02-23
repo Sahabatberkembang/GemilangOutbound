@@ -63,29 +63,11 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="GKO Malang" />
 
-    <!-- Performance: Preconnect & Preload -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Performance: Preload hero image -->
     <link rel="preload" as="image" href="images/hero_outbound.webp" fetchpriority="high" type="image/webp" />
-    <!-- Local CSS (replaces Tailwind CDN for performance) -->
-    <link rel="stylesheet" href="styles.css" />
-
-    <!-- Google Fonts: Inter (non-blocking) -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-      media="print"
-      onload="this.media='all'"
-    />
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/></noscript>
-    <!-- Material Symbols (non-blocking) -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap"
-      rel="stylesheet"
-      media="print"
-      onload="this.media='all'"
-    />
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet"/></noscript>
+    <!-- Non-blocking CSS load -->
+    <link rel="preload" as="style" href="styles.css" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="styles.css"/></noscript>
 
     <!-- JSON-LD: LocalBusiness Schema (for AEO/GEO) -->
     <script type="application/ld+json">
@@ -276,10 +258,61 @@
       }
     </script>
 
-    <!-- Inline critical CSS for above-the-fold -->
+    <!-- Critical inline CSS: prevents FOUC, zero render-blocking -->
     <style>
-      /* Critical: prevent FOUC before fonts load */
-      body { font-family: 'Inter', system-ui, sans-serif; background: #f0fdf4; color: #1e293b; }
+      *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+      html{scroll-behavior:smooth;line-height:1.5}
+      body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;background:#f0fdf4;color:#1e293b;-webkit-font-smoothing:antialiased}
+      img{max-width:100%;height:auto;display:block}
+      /* Nav */
+      nav{position:sticky;top:0;z-index:50;width:100%;border-bottom:1px solid #dcfce7;background:rgba(255,255,255,.9);backdrop-filter:blur(12px)}
+      .max-w-7xl{max-width:80rem}
+      .mx-auto{margin-left:auto;margin-right:auto}
+      .px-4{padding-left:1rem;padding-right:1rem}
+      .flex{display:flex}
+      .items-center{align-items:center}
+      .justify-between{justify-content:space-between}
+      .h-16{height:4rem}
+      .hidden{display:none}
+      /* Hero gradient */
+      .hero-gradient{background:linear-gradient(135deg,#0d6e3f 0%,#065f46 50%,#064e3b 100%)}
+      /* Skip link */
+      .skip-link{position:absolute;top:-100%;left:0;background:#0d6e3f;color:#fff;padding:8px 16px;font-weight:700;z-index:9999;border-radius:0 0 4px 0}
+      .skip-link:focus{top:0}
+      /* WA float */
+      .wa-float{position:fixed;bottom:24px;right:24px;z-index:999;width:60px;height:60px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4)}
+      /* Aspect ratio for hero image container */
+      .aspect-video{aspect-ratio:16/9}
+      .overflow-hidden{overflow:hidden}
+      .relative{position:relative}
+      .w-full{width:100%}
+      .h-full{height:100%}
+      .object-cover{object-fit:cover}
+      /* Mobile menu */
+      #mobile-menu{transition:max-height .3s ease,opacity .3s ease;max-height:0;opacity:0;overflow:hidden}
+      #mobile-menu.open{max-height:400px;opacity:1}
+      /* Icon SVG */
+      .material-symbols-outlined,.icon-svg{display:inline-flex;align-items:center;justify-content:center;width:1em;height:1em;vertical-align:middle;flex-shrink:0}
+      .icon-svg svg,.material-symbols-outlined svg{width:100%;height:100%;fill:currentColor;display:block}
+      /* Text colors needed for nav */
+      .text-primary{color:#0d6e3f}
+      .text-slate-900{color:#0f172a}
+      .text-slate-600{color:#475569}
+      .font-black{font-weight:900}
+      .font-bold{font-weight:700}
+      .text-xl{font-size:1.25rem;line-height:1.75rem}
+      .text-sm{font-size:.875rem;line-height:1.25rem}
+      .tracking-tight{letter-spacing:-.025em}
+      .gap-2{gap:.5rem}
+      .gap-8{gap:2rem}
+      .bg-primary{background-color:#0d6e3f}
+      .text-white{color:#fff}
+      .px-5{padding-left:1.25rem;padding-right:1.25rem}
+      .py-2\.5{padding-top:.625rem;padding-bottom:.625rem}
+      .rounded-lg{border-radius:.5rem}
+      .shadow-sm{box-shadow:0 1px 2px 0 rgba(0,0,0,.05)}
+      .md\:hidden{display:none}
+      @media(min-width:768px){.md\:flex{display:flex}.md\:hidden{display:none}}
     </style>
   </head>
   <body class="bg-bg-light text-slate-800 antialiased">
@@ -1206,5 +1239,7 @@
           window.open(`https://wa.me/6282211221909?text=${text}`, "_blank");
         });
     </script>
+    <!-- Icons: replaces Material Symbols font (defer = non-blocking) -->
+    <script src="icons.js" defer></script>
   </body>
 </html>
