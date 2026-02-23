@@ -17,9 +17,9 @@
 <meta property="og:url" content="https://gemilang-outbound.vercel.app/blog.html"/>
 <meta property="og:title" content="Blog Outbound Malang Batu – Artikel &amp; Tips dari Gemilang Katun Outbound"/>
 <meta property="og:description" content="Artikel terbaru seputar paket outbound, paintball, team building, gathering &amp; wisata edukasi di Malang Batu."/>
-<meta property="og:image" content="https://gemilang-outbound.vercel.app/images/hero_outbound.png"/>
-<meta property="og:image:secure_url" content="https://gemilang-outbound.vercel.app/images/hero_outbound.png"/>
-<meta property="og:image:type" content="image/png"/>
+<meta property="og:image" content="https://gemilang-outbound.vercel.app/images/hero_outbound.webp"/>
+<meta property="og:image:secure_url" content="https://gemilang-outbound.vercel.app/images/hero_outbound.webp"/>
+<meta property="og:image:type" content="image/webp"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
 <meta property="og:image:alt" content="Blog Gemilang Katun Outbound Malang Batu"/>
@@ -31,7 +31,7 @@
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Blog Outbound Malang Batu – Gemilang Katun Outbound"/>
 <meta name="twitter:description" content="Artikel paintball, team building, gathering &amp; wisata edukasi di Malang Batu."/>
-<meta name="twitter:image" content="https://gemilang-outbound.vercel.app/images/hero_outbound.png"/>
+<meta name="twitter:image" content="https://gemilang-outbound.vercel.app/images/hero_outbound.webp"/>
 <meta name="twitter:image:alt" content="Blog Gemilang Katun Outbound - Artikel Outbound Malang Batu"/>
 
 <!-- Geo / Local SEO -->
@@ -52,7 +52,8 @@
 <!-- Performance: Preconnect & Preload -->
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link rel="dns-prefetch" href="https://cdn.tailwindcss.com"/>
+<link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin/>
+<link rel="preload" as="image" href="images/paintball_tempur.webp" fetchpriority="high" type="image/webp"/>
 
 <!-- JSON-LD: BreadcrumbList -->
 <script type="application/ld+json">
@@ -79,7 +80,7 @@
     "@type": "Organization",
     "name": "Gemilang Katun Outbound",
     "url": "https://gemilang-outbound.vercel.app/",
-    "logo": {"@type": "ImageObject", "url": "https://gemilang-outbound.vercel.app/images/hero_outbound.png"}
+    "logo": {"@type": "ImageObject", "url": "https://gemilang-outbound.vercel.app/images/hero_outbound.webp"}
   },
   "blogPost": [
     {"@type":"BlogPosting","headline":"Paket Paintball Simulasi Tempur Batu","url":"https://gemilang-outbound.vercel.app/artikel-1.html","datePublished":"2026-02-20"},
@@ -91,8 +92,8 @@
 }
 </script>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/><noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/></noscript>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/><noscript><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet"/></noscript>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script>
 tailwind.config={darkMode:"class",theme:{extend:{colors:{"primary":"#0d6e3f","primary-dark":"#0a5832","accent":"#f59e0b","bg-light":"#f0fdf4"},fontFamily:{"display":["Inter","sans-serif"]}}}}
@@ -151,7 +152,7 @@ body{font-family:'Inter',sans-serif}.material-symbols-outlined{font-variation-se
 
 <!-- Featured Article -->
 <a href="artikel-1.html" class="card-hover block bg-white rounded-2xl overflow-hidden shadow-sm border border-green-50 mb-12 lg:grid lg:grid-cols-2">
-<div class="lg:aspect-auto aspect-video w-full"><img class="w-full h-full object-cover lg:h-full" src="images/paintball_tempur.png" alt="Paintball Simulasi Tempur Batu"/></div>
+<div class="lg:aspect-auto aspect-video w-full"><img class="w-full h-full object-cover lg:h-full" src="images/paintball_tempur.webp" alt="Paintball Simulasi Tempur Batu" loading="eager" fetchpriority="high" width="640" height="426"/></div>
 <div class="p-8 lg:p-10 flex flex-col justify-center">
 <span class="inline-block bg-primary text-white text-[10px] uppercase tracking-widest font-bold px-3 py-1 rounded-full mb-4 w-fit">🔥 Artikel Pilihan</span>
 <div class="flex items-center text-xs text-slate-400 mb-3 gap-4"><span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">calendar_today</span> 20 Feb 2026</span><span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">schedule</span> 8 min</span></div>
@@ -165,7 +166,7 @@ body{font-family:'Inter',sans-serif}.material-symbols-outlined{font-variation-se
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
 <a href="artikel-2.html" class="card-hover flex flex-col bg-white rounded-2xl overflow-hidden shadow-sm border border-green-50">
-<div class="aspect-video w-full relative"><img class="w-full h-full object-cover" src="images/gathering_jatimpark.png" alt="Gathering Jatim Park"/><span class="absolute top-4 left-4 bg-primary text-white text-[10px] uppercase tracking-widest font-bold px-2.5 py-1 rounded-full">Gathering</span></div>
+<div class="aspect-video w-full relative"><img class="w-full h-full object-cover" src="images/gathering_jatimpark.webp" alt="Gathering Jatim Park" loading="lazy" decoding="async" decoding="async" width="640" height="360"/><span class="absolute top-4 left-4 bg-primary text-white text-[10px] uppercase tracking-widest font-bold px-2.5 py-1 rounded-full">Gathering</span></div>
 <div class="p-6 flex flex-col flex-1">
 <div class="flex items-center text-xs text-slate-400 mb-3 gap-4"><span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">calendar_today</span> 18 Feb 2026</span><span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">schedule</span> 7 min</span></div>
 <h3 class="text-xl font-bold text-slate-900 mb-2 leading-tight">EO Outbound Gathering Jatim Park</h3>
@@ -175,7 +176,7 @@ body{font-family:'Inter',sans-serif}.material-symbols-outlined{font-variation-se
 </a>
 
 <a href="artikel-3.html" class="card-hover flex flex-col bg-white rounded-2xl overflow-hidden shadow-sm border border-green-50">
-<div class="aspect-video w-full relative"><img class="w-full h-full object-cover" src="images/team_bonding.png" alt="Team Bonding Malang"/><span class="absolute top-4 left-4 bg-primary text-white text-[10px] uppercase tracking-widest font-bold px-2.5 py-1 rounded-full">Team Bonding</span></div>
+<div class="aspect-video w-full relative"><img class="w-full h-full object-cover" src="images/team_bonding.webp" alt="Team Bonding Malang" loading="lazy" decoding="async" decoding="async" width="640" height="360"/><span class="absolute top-4 left-4 bg-primary text-white text-[10px] uppercase tracking-widest font-bold px-2.5 py-1 rounded-full">Team Bonding</span></div>
 <div class="p-6 flex flex-col flex-1">
 <div class="flex items-center text-xs text-slate-400 mb-3 gap-4"><span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">calendar_today</span> 15 Feb 2026</span><span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">schedule</span> 7 min</span></div>
 <h3 class="text-xl font-bold text-slate-900 mb-2 leading-tight">Outbound Team Bonding Perusahaan Malang</h3>
@@ -185,7 +186,7 @@ body{font-family:'Inter',sans-serif}.material-symbols-outlined{font-variation-se
 </a>
 
 <a href="artikel-4.html" class="card-hover flex flex-col bg-white rounded-2xl overflow-hidden shadow-sm border border-green-50">
-<div class="aspect-video w-full relative"><img class="w-full h-full object-cover" src="images/wisata_edukasi.png" alt="Wisata Edukasi Malang"/><span class="absolute top-4 left-4 bg-primary text-white text-[10px] uppercase tracking-widest font-bold px-2.5 py-1 rounded-full">Edukasi</span></div>
+<div class="aspect-video w-full relative"><img class="w-full h-full object-cover" src="images/wisata_edukasi.webp" alt="Wisata Edukasi Malang" loading="lazy" decoding="async" decoding="async" width="640" height="360"/><span class="absolute top-4 left-4 bg-primary text-white text-[10px] uppercase tracking-widest font-bold px-2.5 py-1 rounded-full">Edukasi</span></div>
 <div class="p-6 flex flex-col flex-1">
 <div class="flex items-center text-xs text-slate-400 mb-3 gap-4"><span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">calendar_today</span> 12 Feb 2026</span><span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">schedule</span> 8 min</span></div>
 <h3 class="text-xl font-bold text-slate-900 mb-2 leading-tight">Paket Wisata Edukasi Dan Outbound Malang</h3>
@@ -195,7 +196,7 @@ body{font-family:'Inter',sans-serif}.material-symbols-outlined{font-variation-se
 </a>
 
 <a href="artikel-5.html" class="card-hover flex flex-col bg-white rounded-2xl overflow-hidden shadow-sm border border-green-50">
-<div class="aspect-video w-full relative"><img class="w-full h-full object-cover" src="images/songgoriti_outbound.png" alt="Outbound Songgoriti Batu"/><span class="absolute top-4 left-4 bg-primary text-white text-[10px] uppercase tracking-widest font-bold px-2.5 py-1 rounded-full">Paket Harga</span></div>
+<div class="aspect-video w-full relative"><img class="w-full h-full object-cover" src="images/songgoriti_outbound.webp" alt="Outbound Songgoriti Batu" loading="lazy" decoding="async" decoding="async" width="640" height="360"/><span class="absolute top-4 left-4 bg-primary text-white text-[10px] uppercase tracking-widest font-bold px-2.5 py-1 rounded-full">Paket Harga</span></div>
 <div class="p-6 flex flex-col flex-1">
 <div class="flex items-center text-xs text-slate-400 mb-3 gap-4"><span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">calendar_today</span> 10 Feb 2026</span><span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">schedule</span> 7 min</span></div>
 <h3 class="text-xl font-bold text-slate-900 mb-2 leading-tight">Harga Paket Outbound Songgoriti Batu</h3>

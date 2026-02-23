@@ -26,9 +26,9 @@
     <meta property="og:url" content="https://gemilang-outbound.vercel.app/" />
     <meta property="og:title" content="Gemilang Katun Outbound – EO Outbound, Paintball &amp; Team Building Malang Batu" />
     <meta property="og:description" content="Event organizer outbound profesional di Malang &amp; Batu. Paintball, team building, gathering &amp; wisata edukasi. 10+ tahun pengalaman, 500+ klien puas. Hubungi 0822-1122-1909." />
-    <meta property="og:image" content="https://gemilang-outbound.vercel.app/images/hero_outbound.png" />
-    <meta property="og:image:secure_url" content="https://gemilang-outbound.vercel.app/images/hero_outbound.png" />
-    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image" content="https://gemilang-outbound.vercel.app/images/hero_outbound.webp" />
+    <meta property="og:image:secure_url" content="https://gemilang-outbound.vercel.app/images/hero_outbound.webp" />
+    <meta property="og:image:type" content="image/webp" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Gemilang Katun Outbound – Tim profesional outbound Malang Batu" />
@@ -41,7 +41,7 @@
     <meta name="twitter:url" content="https://gemilang-outbound.vercel.app/" />
     <meta name="twitter:title" content="Gemilang Katun Outbound – EO Outbound Malang Batu" />
     <meta name="twitter:description" content="Paintball, team building, gathering &amp; wisata edukasi profesional di Malang &amp; Batu. Hubungi 0822-1122-1909." />
-    <meta name="twitter:image" content="https://gemilang-outbound.vercel.app/images/hero_outbound.png" />
+    <meta name="twitter:image" content="https://gemilang-outbound.vercel.app/images/hero_outbound.webp" />
     <meta name="twitter:image:alt" content="Gemilang Katun Outbound – EO Outbound Profesional Malang Batu" />
 
     <!-- Geo / Local SEO -->
@@ -66,10 +66,8 @@
     <!-- Performance: Preconnect & Preload -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-    <link rel="preload" as="image" href="images/hero_outbound.png" fetchpriority="high" />
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" />
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin />
+    <link rel="preload" as="image" href="images/hero_outbound.webp" fetchpriority="high" type="image/webp" />
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -91,15 +89,21 @@
       };
     </script>
 
-    <!-- Fonts -->
+    <!-- Fonts: Non-blocking load -->
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/></noscript>
     <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet"/></noscript>
 
     <!-- JSON-LD: LocalBusiness Schema (for AEO/GEO) -->
     <script type="application/ld+json">
@@ -110,8 +114,8 @@
         "name": "Gemilang Katun Outbound",
         "alternateName": "GKO Malang",
         "url": "https://gemilang-outbound.vercel.app/",
-        "logo": "https://gemilang-outbound.vercel.app/images/hero_outbound.png",
-        "image": "https://gemilang-outbound.vercel.app/images/hero_outbound.png",
+        "logo": "https://gemilang-outbound.vercel.app/images/hero_outbound.webp",
+        "image": "https://gemilang-outbound.vercel.app/images/hero_outbound.webp",
         "description": "Event organizer outbound profesional di Malang & Batu. Menyediakan paket paintball simulasi tempur, team building, gathering perusahaan, dan wisata edukasi sejak lebih dari 10 tahun.",
         "telephone": "+6282211221909",
         "priceRange": "Rp800.000 – Rp5.000.000",
@@ -583,9 +587,11 @@
             >
               <img
                 class="w-full h-full object-cover aspect-video lg:aspect-square"
-                src="images/hero_outbound.png"
+                src="images/hero_outbound.webp"
                 alt="Tim Gemilang Katun Outbound sedang melakukan aktivitas outbound di hutan pinus Batu Malang"
                 loading="eager"
+                fetchpriority="high"
+                decoding="sync"
                 width="800" height="800"
               />
             </div>
@@ -730,60 +736,66 @@
             class="rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow"
           >
             <img
-              src="images/paintball_tempur.png"
+              src="images/paintball_tempur.webp"
               alt="Aktivitas Paintball Simulasi Tempur di Hutan Pinus Batu"
               class="w-full h-48 md:h-56 object-cover hover:scale-105 transition-transform duration-500"
-              loading="lazy"
+              loading="lazy" decoding="async"
+              width="1024" height="1024"
             />
           </div>
           <div
             class="rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow"
           >
             <img
-              src="images/gathering_jatimpark.png"
+              src="images/gathering_jatimpark.webp"
               alt="Gathering Perusahaan di Jatim Park Malang"
               class="w-full h-48 md:h-56 object-cover hover:scale-105 transition-transform duration-500"
-              loading="lazy"
+              loading="lazy" decoding="async"
+              width="1024" height="1024"
             />
           </div>
           <div
             class="rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow"
           >
             <img
-              src="images/team_bonding.png"
+              src="images/team_bonding.webp"
               alt="Program Team Bonding di Alam Terbuka Malang"
               class="w-full h-48 md:h-56 object-cover hover:scale-105 transition-transform duration-500"
-              loading="lazy"
+              loading="lazy" decoding="async"
+              width="1024" height="1024"
             />
           </div>
           <div
             class="rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow"
           >
             <img
-              src="images/campfire_night.png"
+              src="images/campfire_night.webp"
               alt="Malam Keakraban Campfire di Alam Terbuka Batu"
               class="w-full h-48 md:h-56 object-cover hover:scale-105 transition-transform duration-500"
-              loading="lazy"
+              loading="lazy" decoding="async"
+              width="1024" height="1024"
             />
           </div>
           <div
             class="rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow"
           >
             <img
-              src="images/wisata_edukasi.png"
+              src="images/wisata_edukasi.webp"
               alt="Wisata Edukasi Siswa di Malang Raya"
               class="w-full h-48 md:h-56 object-cover hover:scale-105 transition-transform duration-500"
-              loading="lazy"
+              loading="lazy" decoding="async"
+              width="1024" height="1024"
             />
           </div>
           <div
             class="rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow"
           >
             <img
-              src="images/rafting_adventure.png"
+              src="images/rafting_adventure.webp"
               alt="Rafting Adventure Sungai di Malang"
               class="w-full h-48 md:h-56 object-cover hover:scale-105 transition-transform duration-500"
-              loading="lazy"
+              loading="lazy" decoding="async"
+              width="1024" height="1024"
             />
           </div>
         </div>
@@ -796,10 +808,11 @@
         <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
           <div class="rounded-2xl overflow-hidden shadow-xl mb-10 lg:mb-0">
             <img
-              src="images/about_team.png"
+              src="images/about_team.webp"
               alt="Tim profesional Gemilang Katun Outbound, event organizer outbound Malang Batu"
               class="w-full h-full object-cover aspect-video"
-              loading="lazy"
+              loading="lazy" decoding="async"
+              width="1024" height="576"
             />
           </div>
           <div>
@@ -885,8 +898,10 @@
             <div class="aspect-video w-full relative">
               <img
                 class="w-full h-full object-cover"
-                src="images/paintball_tempur.png"
+                src="images/paintball_tempur.webp"
                 alt="Paintball Simulasi Tempur Batu"
+                loading="lazy" decoding="async"
+                width="640" height="360"
               /><span
                 class="absolute top-4 left-4 bg-primary text-white text-[10px] uppercase tracking-widest font-bold px-2.5 py-1 rounded-full"
                 >Paintball</span
@@ -929,8 +944,10 @@
             <div class="aspect-video w-full relative">
               <img
                 class="w-full h-full object-cover"
-                src="images/gathering_jatimpark.png"
+                src="images/gathering_jatimpark.webp"
                 alt="Gathering Jatim Park"
+                loading="lazy" decoding="async"
+                width="640" height="360"
               /><span
                 class="absolute top-4 left-4 bg-primary text-white text-[10px] uppercase tracking-widest font-bold px-2.5 py-1 rounded-full"
                 >Gathering</span
@@ -973,8 +990,10 @@
             <div class="aspect-video w-full relative">
               <img
                 class="w-full h-full object-cover"
-                src="images/team_bonding.png"
+                src="images/team_bonding.webp"
                 alt="Team Bonding Malang"
+                loading="lazy" decoding="async"
+                width="640" height="360"
               /><span
                 class="absolute top-4 left-4 bg-primary text-white text-[10px] uppercase tracking-widest font-bold px-2.5 py-1 rounded-full"
                 >Team Bonding</span
