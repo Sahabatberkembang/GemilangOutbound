@@ -66,30 +66,11 @@
     <!-- Performance: Preconnect & Preload -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin />
     <link rel="preload" as="image" href="images/hero_outbound.webp" fetchpriority="high" type="image/webp" />
+    <!-- Local CSS (replaces Tailwind CDN for performance) -->
+    <link rel="stylesheet" href="styles.css" />
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <script>
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              primary: "#0d6e3f",
-              "primary-dark": "#0a5832",
-              accent: "#f59e0b",
-              "bg-light": "#f0fdf4",
-              "bg-dark": "#0c1a12",
-            },
-            fontFamily: { display: ["Inter", "sans-serif"] },
-          },
-        },
-      };
-    </script>
-
-    <!-- Fonts: Non-blocking load -->
+    <!-- Google Fonts: Inter (non-blocking) -->
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet"
@@ -97,6 +78,7 @@
       onload="this.media='all'"
     />
     <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/></noscript>
+    <!-- Material Symbols (non-blocking) -->
     <link
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap"
       rel="stylesheet"
@@ -294,117 +276,24 @@
       }
     </script>
 
+    <!-- Inline critical CSS for above-the-fold -->
     <style>
-      body {
-        font-family: "Inter", sans-serif;
-      }
-      .material-symbols-outlined {
-        font-variation-settings:
-          "FILL" 0,
-          "wght" 400,
-          "GRAD" 0,
-          "opsz" 24;
-      }
-      html {
-        scroll-behavior: smooth;
-      }
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      .animate-fade-in-up {
-        animation: fadeInUp 0.7s ease-out forwards;
-      }
-      @keyframes float {
-        0%,
-        100% {
-          transform: translateY(0);
-        }
-        50% {
-          transform: translateY(-10px);
-        }
-      }
-      .animate-float {
-        animation: float 3s ease-in-out infinite;
-      }
-      .hero-gradient {
-        background: linear-gradient(
-          135deg,
-          #0d6e3f 0%,
-          #065f46 50%,
-          #064e3b 100%
-        );
-      }
-      .card-hover {
-        transition: all 0.3s ease;
-      }
-      .card-hover:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 20px 40px rgba(13, 110, 63, 0.15);
-      }
-      .wa-float {
-        position: fixed;
-        bottom: 24px;
-        right: 24px;
-        z-index: 999;
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        background: #25d366;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-        transition: transform 0.3s;
-      }
-      .wa-float:hover {
-        transform: scale(1.1);
-      }
-      .nav-link {
-        position: relative;
-      }
-      .nav-link::after {
-        content: "";
-        position: absolute;
-        bottom: -2px;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background: #0d6e3f;
-        transition: width 0.3s;
-      }
-      .nav-link:hover::after {
-        width: 100%;
-      }
-      #mobile-menu {
-        transition:
-          max-height 0.3s ease,
-          opacity 0.3s ease;
-        max-height: 0;
-        opacity: 0;
-        overflow: hidden;
-      }
-      #mobile-menu.open {
-        max-height: 400px;
-        opacity: 1;
-      }
+      /* Critical: prevent FOUC before fonts load */
+      body { font-family: 'Inter', system-ui, sans-serif; background: #f0fdf4; color: #1e293b; }
     </style>
   </head>
   <body class="bg-bg-light text-slate-800 antialiased">
+    <!-- Skip Navigation Link (Accessibility) -->
+    <a href="#main-content" class="skip-link">Langsung ke konten utama</a>
     <!-- Floating WhatsApp -->
     <a
       href="https://wa.me/6282211221909?text=Halo%20Gemilang%20Katun%20Outbound%2C%20saya%20ingin%20konsultasi%20tentang%20paket%20outbound."
       class="wa-float"
-      aria-label="WhatsApp"
+      aria-label="Hubungi Gemilang Katun Outbound melalui WhatsApp"
       target="_blank"
+      rel="noopener noreferrer"
     >
-      <svg class="w-8 h-8 fill-white" viewBox="0 0 24 24">
+      <svg class="w-8 h-8 fill-white" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
         <path
           d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
         />
@@ -413,6 +302,7 @@
 
     <!-- Navigation -->
     <nav
+      aria-label="Navigasi utama"
       class="sticky top-0 z-50 w-full border-b border-green-100 bg-white/90 backdrop-blur-md"
     >
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -452,11 +342,10 @@
               >Kontak</a
             >
             <a
-              href="https://wa.me/6282211221909?text=Halo%20Gemilang%20Katun%20Outbound%2C%20saya%20tertarik%20dengan%20paket%20outbound."
-              target="_blank"
+              href="https://wa.me/6282211221909?text=Halo%20Gemilang%20Katun%20Outbound%2C%20saya%20tertarik%20dengan%20paket%20outbound." target="_blank" rel="noopener noreferrer"
               class="bg-primary text-white px-5 py-2.5 rounded-lg text-sm font-bold hover:bg-primary-dark transition-all shadow-sm flex items-center gap-2"
             >
-              <svg class="w-4 h-4 fill-white" viewBox="0 0 24 24">
+              <svg class="w-4 h-4 fill-white" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                 <path
                   d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
                 />
@@ -464,7 +353,7 @@
               Hubungi Kami
             </a>
           </div>
-          <button id="menu-toggle" class="md:hidden">
+          <button id="menu-toggle" class="md:hidden" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="mobile-menu">
             <span class="material-symbols-outlined text-slate-700 text-3xl"
               >menu</span
             >
@@ -497,8 +386,7 @@
             >Kontak</a
           >
           <a
-            href="https://wa.me/6282211221909?text=Halo%20Gemilang%20Katun%20Outbound"
-            target="_blank"
+            href="https://wa.me/6282211221909?text=Halo%20Gemilang%20Katun%20Outbound" target="_blank" rel="noopener noreferrer"
             class="mt-2 block text-center bg-primary text-white px-5 py-2.5 rounded-lg text-sm font-bold"
             >Hubungi via WhatsApp</a
           >
@@ -507,6 +395,7 @@
     </nav>
 
     <!-- Hero Section -->
+    <main id="main-content">
     <header
       class="hero-gradient relative overflow-hidden pt-16 pb-20 lg:pt-24 lg:pb-32"
     >
@@ -545,11 +434,10 @@
             </p>
             <div class="flex flex-col sm:flex-row gap-4">
               <a
-                href="https://wa.me/6282211221909?text=Halo%20Gemilang%20Katun%20Outbound%2C%20saya%20ingin%20konsultasi%20paket%20outbound%20untuk%20perusahaan%20kami."
-                target="_blank"
+                href="https://wa.me/6282211221909?text=Halo%20Gemilang%20Katun%20Outbound%2C%20saya%20ingin%20konsultasi%20paket%20outbound%20untuk%20perusahaan%20kami." target="_blank" rel="noopener noreferrer"
                 class="bg-accent text-slate-900 px-8 py-4 rounded-xl text-base font-extrabold hover:bg-yellow-400 transition-all shadow-lg shadow-accent/30 text-center flex items-center justify-center gap-2"
               >
-                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                   <path
                     d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
                   />
@@ -634,8 +522,7 @@
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <a
-            href="https://wa.me/6282211221909?text=Halo%2C%20saya%20tertarik%20dengan%20paket%20Paintball%20Simulasi%20Tempur."
-            target="_blank"
+            href="https://wa.me/6282211221909?text=Halo%2C%20saya%20tertarik%20dengan%20paket%20Paintball%20Simulasi%20Tempur." target="_blank" rel="noopener noreferrer"
             class="card-hover p-7 rounded-2xl bg-bg-light border border-green-100 hover:border-primary/30 group block"
           >
             <div
@@ -655,8 +542,7 @@
             </p>
           </a>
           <a
-            href="https://wa.me/6282211221909?text=Halo%2C%20saya%20tertarik%20dengan%20paket%20Gathering%20%26%20Outing."
-            target="_blank"
+            href="https://wa.me/6282211221909?text=Halo%2C%20saya%20tertarik%20dengan%20paket%20Gathering%20%26%20Outing." target="_blank" rel="noopener noreferrer"
             class="card-hover p-7 rounded-2xl bg-bg-light border border-green-100 hover:border-primary/30 group block"
           >
             <div
@@ -676,8 +562,7 @@
             </p>
           </a>
           <a
-            href="https://wa.me/6282211221909?text=Halo%2C%20saya%20tertarik%20dengan%20paket%20Team%20Bonding."
-            target="_blank"
+            href="https://wa.me/6282211221909?text=Halo%2C%20saya%20tertarik%20dengan%20paket%20Team%20Bonding." target="_blank" rel="noopener noreferrer"
             class="card-hover p-7 rounded-2xl bg-bg-light border border-green-100 hover:border-primary/30 group block"
           >
             <div
@@ -695,8 +580,7 @@
             </p>
           </a>
           <a
-            href="https://wa.me/6282211221909?text=Halo%2C%20saya%20tertarik%20dengan%20paket%20Wisata%20Edukasi."
-            target="_blank"
+            href="https://wa.me/6282211221909?text=Halo%2C%20saya%20tertarik%20dengan%20paket%20Wisata%20Edukasi." target="_blank" rel="noopener noreferrer"
             class="card-hover p-7 rounded-2xl bg-bg-light border border-green-100 hover:border-primary/30 group block"
           >
             <div
@@ -857,8 +741,7 @@
               </div>
             </div>
             <a
-              href="https://wa.me/6282211221909?text=Halo%2C%20saya%20ingin%20tahu%20lebih%20lanjut%20tentang%20Gemilang%20Katun%20Outbound."
-              target="_blank"
+              href="https://wa.me/6282211221909?text=Halo%2C%20saya%20ingin%20tahu%20lebih%20lanjut%20tentang%20Gemilang%20Katun%20Outbound." target="_blank" rel="noopener noreferrer"
               class="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-xl font-bold hover:bg-primary-dark transition-all shadow-md"
             >
               <span class="material-symbols-outlined text-lg">chat</span>
@@ -1067,8 +950,7 @@
           program outbound yang tepat sasaran untuk perusahaan Anda.
         </p>
         <a
-          href="https://wa.me/6282211221909?text=Halo%20Gemilang%20Katun%20Outbound%2C%20saya%20ingin%20konsultasi%20paket%20outbound.%20Berikut%20detail%20kami%3A%0ANama%3A%20%0APerusahaan%3A%20%0AJumlah%20Peserta%3A%20%0ATanggal%20Rencana%3A%20"
-          target="_blank"
+          href="https://wa.me/6282211221909?text=Halo%20Gemilang%20Katun%20Outbound%2C%20saya%20ingin%20konsultasi%20paket%20outbound.%20Berikut%20detail%20kami%3A%0ANama%3A%20%0APerusahaan%3A%20%0AJumlah%20Peserta%3A%20%0ATanggal%20Rencana%3A%20" target="_blank" rel="noopener noreferrer"
           class="inline-flex items-center gap-3 bg-accent text-slate-900 px-10 py-5 rounded-xl text-lg font-extrabold hover:bg-yellow-400 transition-all shadow-xl shadow-accent/30"
         >
           <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
@@ -1101,9 +983,8 @@
           <form id="contact-form" class="space-y-5">
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div>
-                <label class="block text-sm font-semibold text-slate-700 mb-1.5"
-                  >Nama Lengkap</label
-                ><input
+                <label for="cf-name" class="block text-sm font-semibold text-slate-700 mb-1.5">Nama Lengkap</label>
+<input
                   id="cf-name"
                   type="text"
                   required
@@ -1112,9 +993,8 @@
                 />
               </div>
               <div>
-                <label class="block text-sm font-semibold text-slate-700 mb-1.5"
-                  >Perusahaan / Instansi</label
-                ><input
+                <label for="cf-company" class="block text-sm font-semibold text-slate-700 mb-1.5">Perusahaan / Instansi</label>
+<input
                   id="cf-company"
                   type="text"
                   class="w-full bg-white border border-green-200 rounded-lg px-4 py-3 text-sm focus:ring-primary focus:border-primary"
@@ -1124,9 +1004,8 @@
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div>
-                <label class="block text-sm font-semibold text-slate-700 mb-1.5"
-                  >Jumlah Peserta</label
-                ><input
+                <label for="cf-pax" class="block text-sm font-semibold text-slate-700 mb-1.5">Jumlah Peserta</label>
+<input
                   id="cf-pax"
                   type="number"
                   class="w-full bg-white border border-green-200 rounded-lg px-4 py-3 text-sm focus:ring-primary focus:border-primary"
@@ -1134,9 +1013,8 @@
                 />
               </div>
               <div>
-                <label class="block text-sm font-semibold text-slate-700 mb-1.5"
-                  >Tanggal Rencana</label
-                ><input
+                <label for="cf-date" class="block text-sm font-semibold text-slate-700 mb-1.5">Tanggal Rencana</label>
+<input
                   id="cf-date"
                   type="date"
                   class="w-full bg-white border border-green-200 rounded-lg px-4 py-3 text-sm focus:ring-primary focus:border-primary"
@@ -1144,9 +1022,8 @@
               </div>
             </div>
             <div>
-              <label class="block text-sm font-semibold text-slate-700 mb-1.5"
-                >Paket yang Diminati</label
-              >
+              <label for="cf-paket" class="block text-sm font-semibold text-slate-700 mb-1.5">Paket yang Diminati</label>
+
               <select
                 id="cf-paket"
                 class="w-full bg-white border border-green-200 rounded-lg px-4 py-3 text-sm focus:ring-primary focus:border-primary"
@@ -1164,9 +1041,8 @@
               </select>
             </div>
             <div>
-              <label class="block text-sm font-semibold text-slate-700 mb-1.5"
-                >Pesan Tambahan</label
-              ><textarea
+              <label for="cf-msg" class="block text-sm font-semibold text-slate-700 mb-1.5">Pesan Tambahan</label>
+<textarea
                 id="cf-msg"
                 rows="3"
                 class="w-full bg-white border border-green-200 rounded-lg px-4 py-3 text-sm focus:ring-primary focus:border-primary"
@@ -1177,7 +1053,7 @@
               type="submit"
               class="w-full bg-primary text-white py-4 rounded-xl font-extrabold text-base hover:bg-primary-dark transition-all shadow-md flex items-center justify-center gap-2"
             >
-              <svg class="w-5 h-5 fill-white" viewBox="0 0 24 24">
+              <svg class="w-5 h-5 fill-white" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                 <path
                   d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
                 />
@@ -1189,6 +1065,7 @@
       </div>
     </section>
 
+    </main><!-- /#main-content -->
     <!-- Footer -->
     <footer class="bg-slate-900 pt-16 pb-8">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1207,10 +1084,9 @@
             </p>
             <div class="flex gap-3">
               <a
-                href="https://wa.me/6282211221909"
-                target="_blank"
+                href="https://wa.me/6282211221909" target="_blank" rel="noopener noreferrer"
                 class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:text-green-400 hover:bg-slate-700 transition-all"
-                ><svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                ><svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                   <path
                     d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
                   /></svg
@@ -1264,8 +1140,7 @@
               <li>
                 <a
                   class="text-sm text-slate-400 hover:text-primary transition-colors flex items-center gap-2"
-                  href="https://wa.me/6282211221909"
-                  target="_blank"
+                  href="https://wa.me/6282211221909" target="_blank" rel="noopener noreferrer"
                   ><span class="material-symbols-outlined text-base">call</span>
                   0822-1122-1909</a
                 >
@@ -1302,12 +1177,14 @@
     </footer>
 
     <script>
-      // Mobile menu toggle
-      document
-        .getElementById("menu-toggle")
-        .addEventListener("click", function () {
-          document.getElementById("mobile-menu").classList.toggle("open");
-        });
+      // Mobile menu toggle (accessible)
+      const menuToggle = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+      menuToggle.addEventListener("click", function () {
+        const isOpen = mobileMenu.classList.toggle("open");
+        menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        menuToggle.setAttribute("aria-label", isOpen ? "Tutup menu navigasi" : "Buka menu navigasi");
+      });
       // Contact form -> WhatsApp
       document
         .getElementById("contact-form")
